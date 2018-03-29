@@ -1,0 +1,47 @@
+<h1>News below</h1>
+
+
+
+{{#each data}}
+<div class="article">
+    <div class="articleHeader">
+        <h1 class="headline">SCORE:{{data.score}}</h1>
+    </div>
+    <div class="articleBody">
+        <p class="summary">{{data.review}}</p>
+    </div>
+</div>
+{{/each}}
+
+
+{{!-- {{#each data}}
+<div class="article">
+    <div class="articleHeader">
+        <h1 class="headline">SCORE:{{score}}</h1>
+    </div>
+    <div class="articleBody">
+        <p class="summary">{{review}}</p>
+    </div>
+</div>
+{{/each}} --}}
+
+{{!-- {{#each data}}
+<div class="article">
+    <div class="articleHeader">
+        <h3 class="date">Date</h3>
+        <h1 class="headline">{{score}}</h1>
+        <h3 class="author">author</h3>
+    </div>
+    <div class="articleBody">
+        <p class="summary">{{review}}Article Summary</p>
+    </div>
+</div>
+{{/each}} --}}
+
+{{!-- <ul>
+  {{#each cats}}
+    {{#unless sleepy}}
+      {{> cats/cat-block sleep=true}}
+    {{/unless}}
+  {{/each}}
+</ul> --}}

@@ -2,46 +2,43 @@
 
 
 
-{{#each data}}
-<div class="article">
-    <div class="articleHeader">
-        <h1 class="headline">SCORE:{{data.score}}</h1>
-    </div>
-    <div class="articleBody">
-        <p class="summary">{{data.review}}</p>
-    </div>
+
+
+<div class="container">
+    {{#each data}}
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="article">
+                    <div class="articleHeader">
+                        <h3 class="date">{{date}}</h3>
+                        <h1 class="headline">{{headline}}</h1>
+                        <h3 class="author">{{author}}</h3>
+                    </div>
+                    <div class="articleBody">
+                        <p class="summary">{{summary}}</p>
+                        <a href="{{link}}">CLICK HERE FOR FULL STORY</a>
+                    </div>
+                    <div class="voteRow">
+                        <button class="btn btn-info thumbsUp" id="{{id}}">thumbsUp</button>
+                        <button class="btn btn-info thumbsDown" id="{{id}}">thumbsDown</button>
+                    </div>
+                    <p>
+                    <button class="btn btn-primary showComments" type="button" data-toggle="collapse" data-target="#collapse{{@index}}" data-article="{{id}}" aria-expanded="false" aria-controls="collapse{{@index}}">
+                    Show Comments
+                    </button>
+                    </p>
+                    <div class="collapse" id="collapse{{@index}}">
+                    <div class="card card-body">
+                        Comments Go Below Sir
+                        <div class="comments{{id}}"></div>
+                        <div class="postComment">                            
+                            <input type="text" id="input${1/(\w+)/\u\1/g}" class="form-control {{id}}" placeholder="Post Comment Here">
+                            <button type="button" class="btn btn-success addComment" data-article="{{id}}">Post Comment</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{/each}}
 </div>
-{{/each}}
-
-
-{{!-- {{#each data}}
-<div class="article">
-    <div class="articleHeader">
-        <h1 class="headline">SCORE:{{score}}</h1>
-    </div>
-    <div class="articleBody">
-        <p class="summary">{{review}}</p>
-    </div>
-</div>
-{{/each}} --}}
-
-{{!-- {{#each data}}
-<div class="article">
-    <div class="articleHeader">
-        <h3 class="date">Date</h3>
-        <h1 class="headline">{{score}}</h1>
-        <h3 class="author">author</h3>
-    </div>
-    <div class="articleBody">
-        <p class="summary">{{review}}Article Summary</p>
-    </div>
-</div>
-{{/each}} --}}
-
-{{!-- <ul>
-  {{#each cats}}
-    {{#unless sleepy}}
-      {{> cats/cat-block sleep=true}}
-    {{/unless}}
-  {{/each}}
-</ul> --}}

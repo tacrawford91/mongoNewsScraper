@@ -36,23 +36,6 @@ router.get("/", (req,res) => {
                 date,
                 author
                 });
-            //     Article.find({headline: headline}, (err,data) => {
-            //     if (err) throw err;
-            //     console.log("I found these users:" + data.length)
-            //     if (data.length === 0) {
-            //         var newArticle = new Article ({
-            //             headline,
-            //             summary,
-            //             link,
-            //             date,
-            //             author});
-            //         newArticle.save( function(err) {
-            //             if (err) throw err; 
-            //             console.log(`added user`);
-            //         });
-            //     }  
-            // });  
-            // Using our Library model, "find" every library in our db
             db.Article.find({headline: headline})
                 .then(function(foundArticles) {
                 if (foundArticles.length === 0) {
@@ -64,7 +47,7 @@ router.get("/", (req,res) => {
             });         
         });
 
-        db.Article.find({})
+        db.Article.find({}).sort({_id: 1})
         .then((allArticles) => {
             hbsObject = {
                 data: allArticles

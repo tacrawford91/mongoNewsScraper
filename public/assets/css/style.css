@@ -1,3 +1,10 @@
+html { 
+    background: url("/public/assets/images/newspaper.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
 .articleRow {
     border: 5px solid;
     border-radius: 20px;
@@ -9,3 +16,26 @@
 h3.date {
     text-align: center;
 }
+.voteRow {
+    text-align: center;
+}
+.thumbsUp {
+    margin-right: 15%;
+}
+.thumbs {
+    font-size: 35px;
+    margin: 2px 36px 2px;
+}
+.commentDiv {
+    background: lightsteelblue;
+    border: 1px solid black;
+    border-radius: 25px;
+    margin: 5px 0 5px 0;
+}
+h3.commentDate {
+    text-align: center;
+}
+p.commentBody {
+    text-align: center;
+}
+

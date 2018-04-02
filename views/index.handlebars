@@ -1,6 +1,10 @@
-<h1>News below</h1>
 
-
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Welcome To DevFlash News</h1>
+    <p class="lead">Here we scrape our friends at <a href="https://www.developer-tech.com/">www.developer-tech.com</a> and allow our user to comment and like/dislike the articles. See an interesting headline? Check the comments to make sure its a good read!  </p>
+  </div>
+</div>
 
 
 
@@ -20,10 +24,10 @@
                         <a href="{{link}}">CLICK HERE FOR FULL STORY</a>
                     </div>
                     <div class="voteRow">
-                        <button class="btn btn-info thumbsUp" id="{{id}}">thumbsUp</button>
-                        <button class="btn btn-info thumbsDown" id="{{id}}">thumbsDown</button>
+                        <button class="btn btn-info thumbsUp text-center thumbs" id="{{id}}"><i class="fas fa-thumbs-up"></i></button>
+                        <button class="btn btn-info thumbsDown text-center thumbs" id="{{id}}"><i class="fas fa-thumbs-down"></i></button>
                     </div>
-                    <p>
+                    <p class="text-center">
                     <button class="btn btn-primary showComments" type="button" data-toggle="collapse" data-target="#collapse{{@index}}" data-article="{{id}}" aria-expanded="false" aria-controls="collapse{{@index}}">
                     Show Comments
                     </button>

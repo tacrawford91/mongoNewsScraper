@@ -1,0 +1,11 @@
+.articleRow {
+    border: 5px solid;
+    border-radius: 20px;
+    margin-top: 5px;
+}
+.articleBody {
+    text-align: center;
+}
+h3.date {
+    text-align: center;
+}

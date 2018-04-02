@@ -8,9 +8,9 @@ var PORT = process.env.PORT || 3000;
 var mongoose = require("mongoose")
 //connect to db
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoScrape_db";
+
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
-
 // Html Parser
 var cheerio = require("cheerio");
 // Requests html page!
@@ -41,8 +41,7 @@ app.use("/api", apiRoutes);
 
 //connect to db
 mongoose.connect(MONGODB_URI, {
-
-});
+  });
 
 //start server
 app.listen(PORT, function() {

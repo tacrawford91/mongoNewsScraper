@@ -14,7 +14,11 @@
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="article">
                     <div class="articleHeader">
-                        <h3 class="date">{{date}}</h3>
+                        <div class="row">
+                            <h3 class="headerUp col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center align-middle"><i class="fas fa-thumbs-up"></i>:{{thumbsUp}}</h3>
+                            <h3 class="date col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center align-middle">{{date}}</h3>
+                            <h3 class="headerDown col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center align-middle"><i class="fas fa-thumbs-down"></i>:{{thumbsDown}}</h3>
+                        </div>
                         <hr>
                         <h1 class="headline">{{headline}}</h1>
                         <h3 class="author">{{author}}</h3>
@@ -24,8 +28,8 @@
                         <a href="{{link}}">CLICK HERE FOR FULL STORY</a>
                     </div>
                     <div class="voteRow">
-                        <button class="btn btn-info thumbsUp text-center thumbs" id="{{id}}"><i class="fas fa-thumbs-up"></i></button>
-                        <button class="btn btn-info thumbsDown text-center thumbs" id="{{id}}"><i class="fas fa-thumbs-down"></i></button>
+                        <button class="btn btn-info thumbsUp text-center thumbs {{id}}" data-headline="{{headline}}" data-article="{{id}}"><i class="fas fa-thumbs-up"></i></button>
+                        <button class="btn btn-info thumbsDown text-center thumbs {{id}}" data-headline="{{headline}}" data-article="{{id}}"><i class="fas fa-thumbs-down"></i></button>
                     </div>
                     <p class="text-center">
                     <button class="btn btn-primary showComments" type="button" data-toggle="collapse" data-target="#collapse{{@index}}" data-article="{{id}}" aria-expanded="false" aria-controls="collapse{{@index}}">
@@ -34,9 +38,9 @@
                     </p>
                     <div class="collapse" id="collapse{{@index}}">
                     <div class="card card-body">
-                        Comments Go Below Sir
+                        Add your own comment below! 
                         <div class="comments{{id}}"></div>
-                        <div class="postComment">                            
+                        <div class="postComment {{id}}">                            
                             <input type="text" id="input${1/(\w+)/\u\1/g}" class="form-control {{id}}" placeholder="Post Comment Here">
                             <button type="button" class="btn btn-success addComment" data-article="{{id}}">Post Comment</button>
                         </div>

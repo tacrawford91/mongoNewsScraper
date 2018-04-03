@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 // create schema
-var articleSchema = new Schema({
+var ArticleSchema = new Schema({
     headline: {
         type:String,
         required:true,
@@ -25,10 +25,12 @@ var articleSchema = new Schema({
         required:true
     },
     thumbsUp:{
-        type:String,
+        type: Number,
+        default: 0
     },
     thumbsDown:{
-        type:String,
+        type: Number,
+        default: 0
     },
     comment: {
         type: Schema.Types.ObjectId,
@@ -38,6 +40,20 @@ var articleSchema = new Schema({
     updated_at: Date
 });
 
-var Article = mongoose.model('Article', articleSchema);
+
+ArticleSchema.methods.getThumbsUp = function() {
+    this.thumbsUp = this.thumbsUp +1
+    return this.thumbsUp;
+}
+
+
+ArticleSchema.methods.getThumbsDown = function() {
+    this.thumbsDown = this.thumbsDown +1
+    return this.thumbsDown;
+}
+
+
+
+var Article = mongoose.model('Article', ArticleSchema);
 
 module.exports = Article;

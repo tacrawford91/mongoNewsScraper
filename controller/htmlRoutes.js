@@ -14,10 +14,8 @@ var mongoose = require("mongoose");
 // Require all models
 var db = require("../models");
 
-
+//scrape route. once scrape is complete, redirect to home route
 router.get("/", (req,res) => {
-    // var hbsObject;
-    var results = [];
     request("https://www.developer-tech.com/news/", (error, response, html) => {
         // Load the HTML into cheerio and save it to a variable
         var $ = cheerio.load(html);
@@ -28,14 +26,6 @@ router.get("/", (req,res) => {
                 var date = $(element).children(".meta_list").children("h4").text().split(",")[1];
                 // var image = $(element).children(".image_and_summary_wrapper").children(".thumb").children("img").attr("src");
                 var link = `https://www.developer-tech.com/${$(element).children("a").attr("href")}`;
-                // push to result array
-                results.push({
-                headline,
-                summary,
-                link,
-                date,
-                author
-                });
             db.Article.find({headline: headline})
                 .then(function(foundArticles) {
                 if (foundArticles.length === 0) {
@@ -45,17 +35,19 @@ router.get("/", (req,res) => {
                     .catch((err) => console.log(`THE IS ERROR IS THE FOLLOWING: ${err}`));
                 } 
             });         
-        });
-
-        db.Article.find({}).sort({_id: 1})
-        .then((allArticles) => {
-            hbsObject = {
-                data: allArticles
-            };
-            res.render("index", hbsObject)
-        }).catch((err) => console.log(`rendering THE IS ERROR IS THE FOLLOWING: ${err}`));      
+        });     
+    res.redirect("/home");
     }); 
 });
 
+router.get("/home", (req,res) => {
+    var hbsObject;
+    db.Article.find({}).sort({_id: 1})
+    .then((allArticles) => {
+        hbsObject = {
+            data: allArticles
+        };
+    }).then( () => {res.render("index", hbsObject)}).catch((err) => console.log(`rendering THE IS ERROR IS THE FOLLOWING: ${err}`));      
+ }); 
 
-module.exports = router;
+    module.exports = router;

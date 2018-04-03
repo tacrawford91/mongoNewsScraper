@@ -10,11 +10,27 @@ html {
     border-radius: 20px;
     margin-top: 5px;
 }
+.headerUp {
+margin: 0;
+font-size: 34px;
+}
+hr {
+    margin-top: 0;
+    margin-bottom: 5px;
+    border: 0;
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+
+.headerDown {
+    margin: 0;
+    font-size: 34px;
+}
 .articleBody {
-    text-align: center;
+    margin: 0;
 }
 h3.date {
-    text-align: center;
+    font-size: 31px;
+    margin: 0;
 }
 .voteRow {
     text-align: center;

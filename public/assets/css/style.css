@@ -13,10 +13,11 @@
     background-size: cover;
 }
 .articleRow {
-    /* border: 5px solid; */
     border-radius: 20px;
     margin-top: 46px;
     background: rgba(560,560,560,0.6);
+    padding: 10px;  
+    box-shadow: 3px 3px #888888;
 }
 .headerUp {
 margin: 0;
@@ -77,4 +78,7 @@ p.commentBody {
 }
 .link {
     font-size: 25px;
+}
+.jumbohr {
+    border-top: 2px solid rgba(6,0,0,.1);
 }

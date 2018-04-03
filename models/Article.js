@@ -41,19 +41,6 @@ var ArticleSchema = new Schema({
 });
 
 
-ArticleSchema.methods.getThumbsUp = function() {
-    this.thumbsUp = this.thumbsUp +1
-    return this.thumbsUp;
-}
-
-
-ArticleSchema.methods.getThumbsDown = function() {
-    this.thumbsDown = this.thumbsDown +1
-    return this.thumbsDown;
-}
-
-
-
 var Article = mongoose.model('Article', ArticleSchema);
 
 module.exports = Article;

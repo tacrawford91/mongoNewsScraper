@@ -81,7 +81,7 @@ $(document).on("click", ".thumbsDown", function() {
         url: `/api/thumbs/${id}`,
     }).then((data) => {
         console.log(data[0].thumbsDown)
-        let thumbsUp = data[0].thumbsDown + 1
+        let thumbsDown = data[0].thumbsDown + 1
         let update = {
             headline: headline,
             thumbsDown: thumbsDown

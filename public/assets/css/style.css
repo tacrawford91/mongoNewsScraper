@@ -13,9 +13,9 @@
     background-size: cover;
 }
 .articleRow {
-    border: 5px solid;
+    /* border: 5px solid; */
     border-radius: 20px;
-    margin-top: 5px;
+    margin-top: 46px;
     background: rgba(560,560,560,0.6);
 }
 .headerUp {

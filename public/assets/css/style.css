@@ -1,14 +1,22 @@
-html { 
-    background: url("/public/assets/images/newspaper.jpg") no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+
+
+  .bg { 
+    /* The image used */
+    background-image: url("../images/newspaper4.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
-  }
+}
 .articleRow {
     border: 5px solid;
     border-radius: 20px;
     margin-top: 5px;
+    background: rgba(560,560,560,0.6);
 }
 .headerUp {
 margin: 0;
@@ -37,10 +45,17 @@ h3.date {
 }
 .thumbsUp {
     margin-right: 15%;
+    background: #37b337;
+    border-color: #37b337;
 }
+.thumbsDown {
+    background: #c91d1dba;
+    border-color: #c91d1dba;
+}
+
 .thumbs {
     font-size: 35px;
-    margin: 2px 36px 2px;
+    margin: 2px 36px 6px;
 }
 .commentDiv {
     background: lightsteelblue;
@@ -54,4 +69,12 @@ h3.commentDate {
 p.commentBody {
     text-align: center;
 }
-
+.jumbotron {
+    background: rgba(560,560,560,0.0);
+}
+.showComments {
+    width: 197px;
+}
+.link {
+    font-size: 25px;
+}

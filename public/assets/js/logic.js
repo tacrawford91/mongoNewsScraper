@@ -3,14 +3,17 @@
 $(document).on("click", ".addComment",  function()  {
     let id = $(this).attr("data-article");
     console.log(id);
+    //hide button 
+    $(this).hide();
+    //Hide input field    
     $(`.postComment .${id}`).hide();
+    //build obj to be sent
     let newComment = {
         id: id,
         body: $(`.form-control.${id}`).val().trim(),
-        created: new Date($.now())
+        created: moment().calendar()
     };
-
-    console.log(`comment body: ${newComment.body}`)
+    //Post comment to db
     $.ajax({
         method: "POST",
         url: "/api/newComment",
@@ -20,9 +23,10 @@ $(document).on("click", ".addComment",  function()  {
           console.log(data);
           // Empty the comment section
           $(`.${id}`).val("");
-        }).then( 
+        }).then(
             function() {$(`.comments${id}`).html("")
         console.log(id)
+
         $.ajax({
             method: "Get",
             url: `/api/comments/${id}`
@@ -54,9 +58,8 @@ $(document).on("click", ".thumbsUp", function() {
         method: "Get",
         url: `/api/thumbs/${id}`,
     }).then((data) => {
-        console.log(data[0].thumbsUp)
-        let thumbsUp = data[0].thumbsUp + 1
-        let update = {
+        const thumbsUp = data[0].thumbsUp + 1;
+        const update = {
             headline: headline,
             thumbsUp: thumbsUp
         }

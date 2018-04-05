@@ -36,6 +36,9 @@ var ArticleSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "Comment"
       },
+    sortDate: {
+        type: Number
+    },
     created_at: Date,
     updated_at: Date
 });

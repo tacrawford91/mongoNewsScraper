@@ -7,6 +7,8 @@ $(document).on("click", ".addComment",  function()  {
     $(this).hide();
     //Hide input field    
     $(`.postComment .${id}`).hide();
+    //hide p tag
+    $(`.postedComment .${id}`).hide();
     //build obj to be sent
     let newComment = {
         id: id,

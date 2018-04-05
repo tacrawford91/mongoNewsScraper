@@ -2,7 +2,7 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-4">Welcome To DevFlash News</h1>
-    <p class="lead">Here we scrape our friends at <a href="https://www.developer-tech.com/">www.developer-tech.com</a> and allow our user to comment and like/dislike the articles. See an interesting headline? Check the comments to make sure its a good read!  </p>
+    <p class="lead">Here we scrape our friends at <a href="https://www.developer-tech.com/">www.developer-tech.com</a> and allow our users to comment and like/dislike the articles. See an interesting headline? Check the comments to make sure its a good read!  </p>
     <hr class="jumbohr">
   </div>
 </div>
@@ -39,9 +39,9 @@
                     </p>
                     <div class="collapse" id="collapse{{@index}}">
                     <div class="card card-body">
-                        Add your own comment below! 
-                        <div class="comments{{id}}"></div>
-                        <div class="postComment {{id}}">                            
+                        <div class="comments{{id}}"></div> 
+                        <div class="postComment {{id}}">
+                            <p class="postedComment {{id}}">Tell Others What You Thought About The Article:</p>                            
                             <input type="text" id="input${1/(\w+)/\u\1/g}" class="form-control {{id}}" placeholder="Post Comment Here">
                             <button type="button" class="btn btn-success addComment" data-article="{{id}}">Post Comment</button>
                         </div>

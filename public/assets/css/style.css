@@ -2,7 +2,7 @@
 
   .bg { 
     /* The image used */
-    background-image: url("../images/newspaper4.jpg");
+    background-image: url("../images/newspaper6.jpg");
 
     /* Full height */
     height: 100%; 
@@ -15,7 +15,7 @@
 .articleRow {
     border-radius: 20px;
     margin-top: 46px;
-    background: rgba(560,560,560,0.6);
+    background: rgba(560,560,560,0.85);
     padding: 10px;  
     box-shadow: 3px 3px #888888;
 }
@@ -71,7 +71,9 @@ p.commentBody {
     text-align: center;
 }
 .jumbotron {
-    background: rgba(560,560,560,0.0);
+    background: rgba(560,560,560,0.85);
+    padding-bottom: 0;
+    padding-top: 15px;
 }
 .showComments {
     width: 197px;
@@ -81,4 +83,11 @@ p.commentBody {
 }
 .jumbohr {
     border-top: 2px solid rgba(6,0,0,.1);
+}
+
+p {
+   font-size: 25px; 
+}
+p.lead {
+    font-size: 30px;
 }

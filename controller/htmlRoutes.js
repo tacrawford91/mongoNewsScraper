@@ -23,14 +23,18 @@ router.get("/", (req,res) => {
                 var headline = $(element).children("a").children("h2").text();
                 var summary = $(element).children(".image_and_summary_wrapper").text();
                 var author = $(element).children(".meta_list").children("h4").text().split(",")[0];
-                var date = $(element).children(".meta_list").children("h4").text().split(",")[1];
+                var date = $(element).children(".meta_list").children("h4").text().split(",")[1]; 
+                var day = date.substring(1,3);
+                var month = date.substring(4, date.length-5);
+                var year = date.substring(date.length-4,date.length)
                 // var image = $(element).children(".image_and_summary_wrapper").children(".thumb").children("img").attr("src");
+                var sortDate = Date.parse(`${month}-${day}-${year}`)
                 var link = `https://www.developer-tech.com/${$(element).children("a").attr("href")}`;
             db.Article.find({headline: headline})
                 .then(function(foundArticles) {
                 if (foundArticles.length === 0) {
                     db.Article.create({
-                        headline,summary,link,date,author})
+                        headline,summary,link,date,author,sortDate})
                     .then((createdArticle)=> {console.log(`created: ${createdArticle}`)})
                     .catch((err) => console.log(`THE IS ERROR IS THE FOLLOWING: ${err}`));
                 } 
@@ -42,7 +46,7 @@ router.get("/", (req,res) => {
 
 router.get("/home", (req,res) => {
     var hbsObject;
-    db.Article.find({}).sort({_id: 1})
+    db.Article.find({}).sort({sortDate: -1})
     .then((allArticles) => {
         hbsObject = {
             data: allArticles

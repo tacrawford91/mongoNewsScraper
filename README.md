@@ -17,7 +17,7 @@ We scrape our friends at www.developer-tech.com and present you, our reader, the
  
  See example image below:
 
-![Screenshot](https://github.com/tacrawford91/Bamazon-Node.js-MySQL/blob/master/HowToImage/Customer/CustomerFailure.PNG) <br>
+![Screenshot](https://github.com/tacrawford91/mongoNewsScraper/blob/master/public/assets/images/readme.PNG) <br>
 
 ##### Click Show Comments
 Click show comments to see what other readers have been saying before you commit to the read.

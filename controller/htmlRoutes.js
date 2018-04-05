@@ -35,7 +35,6 @@ router.get("/", (req,res) => {
                 if (foundArticles.length === 0) {
                     db.Article.create({
                         headline,summary,link,date,author,sortDate})
-                    .then((createdArticle)=> {console.log(`created: ${createdArticle}`)})
                     .catch((err) => console.log(`THE IS ERROR IS THE FOLLOWING: ${err}`));
                 } 
             });         

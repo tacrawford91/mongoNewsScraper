@@ -1,6 +1,8 @@
 # DevFlashNews -HandleBars,Node-Express,Mongoose,MongoDB
 ###### <center> DevFlashNews is a full stack application. The appicaltion is a web scraper, that allows the users to like/dislike and comment on each article. Technical skills:HTML5,CSS3,Bootstrap4, JS, Jquery,Node, Express,Cheerio.js, Request, Mongodb, Mongoose, HandleBars.js</center>
 
+##### link to site: https://devflashnews.herokuapp.com/
+
 ##### <center> Welcome to DevFlashNews, where we deliver the news in a flash.</center> 
 
 We scrape our friends at www.developer-tech.com and present you, our reader, the following:
